@@ -40,10 +40,11 @@
               <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST">
+                <form method="POST"action="{{ url('/register')}}">
+                  @csrf
                   <div class="form-group">
                     <label for="Full_Name">Full Name</label>
-                    <input id="Full_Name" type="text" class="form-control" name="Full_Name">
+                    <input id="Full_Name" type="text" class="form-control" name="name">
                   </div>
 
                   <div class="form-group">
@@ -64,7 +65,7 @@
                     </div>
                     <div class="form-group col-6">
                       <label for="password2" class="d-block">Password Confirmation</label>
-                      <input id="password2" type="password" class="form-control" name="password-confirm">
+                      <input id="password2" type="password" class="form-control" name="password-confirmation">
                     </div>
                   </div>
                   <div class="form-group">
@@ -74,6 +75,8 @@
                   </div>
                 </form>
               </div>
+            <div class="mt-5 text-muted text-center">
+              Already have an account? <a href="{{ route('login') }}">Login here</a>
             </div>
             <div class="simple-footer">
               Copyright &copy; Stisla <span id = "year"></span>
