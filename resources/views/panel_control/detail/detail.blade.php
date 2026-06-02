@@ -55,7 +55,7 @@
                                     </p>
                                 </div>
                                 <button type="button"
-                                    class="btn {{ $isFavorite ? 'btn-danger' : 'btn-outline-danger' }}"
+                                    class="btn {{ $isFavorite ? 'btn-danger' : 'btn-outline-danger' }} favorite-btn"
                                     id="favorite-btn"
                                     data-imdb="{{ $movie['imdbID'] ?? '' }}"
                                     data-title="{{ $movie['Title'] ?? '' }}"

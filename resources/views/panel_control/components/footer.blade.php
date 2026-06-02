@@ -93,7 +93,13 @@ function sendFavoriteRequest(url, method, body = null) {
     }).then(res => res.json());
 }
 
-document.querySelectorAll('.favorite-btn').forEach(btn => {
+const favoriteButtons = Array.from(document.querySelectorAll('.favorite-btn'));
+const favoriteBtn = document.getElementById('favorite-btn');
+if (favoriteBtn && !favoriteButtons.includes(favoriteBtn)) {
+    favoriteButtons.push(favoriteBtn);
+}
+
+favoriteButtons.forEach(btn => {
     btn.addEventListener('click', function () {
         const imdbId = this.dataset.imdb;
         const title  = this.dataset.title;
